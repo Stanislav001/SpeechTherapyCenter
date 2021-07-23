@@ -1,0 +1,38 @@
+﻿@model List<WorkerViewModel>
+<style>
+    .headding-title {
+        background: #FA566E;
+        color: #fff;
+    }
+</style>
+
+<div class="col-md-12 headding-title">
+    <h1 class="text-center">Нашите служители</h1>
+</div>
+<table id="context" class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Име
+            </th>
+            <th>
+                Фамилия
+            </th>
+            <th>
+                Държава
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td width="20%">@item.FirstName</td>
+    <td width="20%">@item.LastName</td>
+    <td width="20%">@item.Country</td>
+    <td>
+        <a asp-controller="Worker" asp-action="GetWorkerById" asp-route-id="@item.WorkerId" class="btn btn-primary mx-1">Вижте</a>
+    </td>
+</tr>}
+    </tbody>
+</table>

@@ -1,9 +1,13 @@
+using Date;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Models;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +28,14 @@ namespace SpeechTherapyCenter
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddTransient<SpeechCenterDbContext>();
+            services.AddTransient<ManagerService>();
+            services.AddTransient<PostService>();
+            services.AddTransient<WorkerService>();
+
+            services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false).AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<SpeechCenterDbContext>().AddDefaultTokenProviders(); ;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

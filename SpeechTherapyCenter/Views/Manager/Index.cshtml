@@ -1,0 +1,41 @@
+﻿@model List<WorkerViewModel>
+
+<table id="context" class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Име
+            </th>
+            <th>
+                Презиме
+            </th>
+            <th>
+                Заплата
+            </th>
+            <th>
+                Години
+            </th>
+            <th>
+                Позиция
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td width="20%">@item.FirstName</td>
+                <td width="20%">@item.LastName</td>
+                <td width="20%">@item.Salary</td>
+                <td width="20%">@item.Year</td>
+                <td width="20%">@item.Position</td>
+                <td>
+                    <a asp-controller="Manager" asp-action="DeleteWorker" asp-route-id="@item.WorkerId" class="btn btn-primary mx-1">Изтрийте</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-controller="Manager" asp-action="AddWorker" class="btn btn-primary mx-1">Добавете нов потребител</a>
+</div>
