@@ -73,6 +73,40 @@ namespace Date
                 Body = "Надяваме се да споделяте мненията си за сайта ни!"
             };
 
+            var firstService = new Service()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Title = "Логопедична терапия",
+                Body = "Спечифична и индивидуална терапия, целяща преодоляването на различните говорни и езикови проблеми.",
+               
+            };
+
+            var secondService = new Service()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Title = "Групова терапия",
+                Body = "Целите са съобразени с групата. Извършват се различен вид занимания - игрови, ролеви, творчески с цел адаптация, социални и личностни умения.",
+
+            };
+
+            var threeService = new Service()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Title = "Психотерапия за деца",
+                Body = "Целите са да поставят ясни граници и правила, да развива паметта, да помага за преодоляване на емоционални трудности и други подобни проблеми.",
+
+            };
+
+            var fourService = new Service()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Title = "Диагностициране",
+                Body = "В нашия логопедичен център предлагаме изследване на говорния и комуникативния статус на детето и определяме нарушението и прецизно създаваме план за коригиране."
+            };
+
+
+
+
             var AdminRole = new IdentityRole() { Id = Guid.NewGuid().ToString(), Name = "Admin" };
             var UserRole = new IdentityRole() { Id = Guid.NewGuid().ToString(), Name = "User" };
 
@@ -80,6 +114,7 @@ namespace Date
             modelBuilder.Entity<IdentityRole>().HasData(AdminRole, UserRole);
             modelBuilder.Entity<Worker>().HasData(firstWorker, secondWorker, thirdWorker);
             modelBuilder.Entity<Manager>().HasData(manager);
+            modelBuilder.Entity<Service>().HasData(firstService, secondService, threeService, fourService);
 
             base.OnModelCreating(modelBuilder);
         }

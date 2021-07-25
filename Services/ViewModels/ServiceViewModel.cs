@@ -15,6 +15,7 @@ namespace Services.ViewModels
         [Display(Name = "Описание: ")]
         public string Body { get; set; }
         [Display(Name = "Дата на провеждане: ")]
-        public DateTime Date { get; set; }
+        public DateTime StartDate = DateTime.Now;
+        public DateTime FinishDate { get; set; }
     }
 }

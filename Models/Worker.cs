@@ -15,5 +15,6 @@ namespace Models
         public string Position { get; set; }
         public ICollection<Manager> Managers { get; set; }
         public ICollection<Post> Posts { get; set; }
+        public ICollection<Service> Services { get; set; }
     }
 }

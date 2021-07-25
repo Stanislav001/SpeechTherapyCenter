@@ -30,9 +30,12 @@ namespace SpeechTherapyCenter
             services.AddControllersWithViews();
 
             services.AddTransient<SpeechCenterDbContext>();
+
+            //Add a services
             services.AddTransient<ManagerService>();
             services.AddTransient<PostService>();
             services.AddTransient<WorkerService>();
+            services.AddTransient<OfficeService>();
 
             services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false).AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<SpeechCenterDbContext>().AddDefaultTokenProviders(); ;
@@ -57,12 +60,14 @@ namespace SpeechTherapyCenter
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }

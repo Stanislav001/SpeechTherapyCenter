@@ -1,0 +1,75 @@
+﻿@model List<ServiceViewModel>
+<style>
+    .service {
+        margin-top: 3%;
+    }
+    .hr {
+        border: 10px solid #ededed;
+    }
+    .services .icon-box {
+        text-align: center;
+        border: 1px solid #ededed;
+        padding: 80px 20px;
+        transition: all ease-in-out 0.3s;
+    }
+
+        .services .icon-box h4 {
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+            .services .icon-box h4 a {
+                color: #545454;
+            }
+
+        .services .icon-box p {
+            line-height: 24px;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .services .icon-box:hover {
+            background: #e96b56;
+            border-color: #e96b56;
+        }
+
+            .services .icon-box:hover .icon {
+                background: #fff;
+            }
+
+                .services .icon-box:hover .icon i {
+                    color: #e96b56;
+                }
+
+                .services .icon-box:hover .icon::before {
+                    background: #ef9383;
+                }
+
+            .services .icon-box:hover h4 a, .services .icon-box:hover p {
+                color: #fff;
+            }
+</style>
+<section id="services" class="services">
+           
+<div class="container">
+        <div class="text-center" data-aos="fade-up">
+            <h2>Нашите услуги</h2>
+            <hr/>
+        </div>
+    <div class="service">
+        @foreach (var item in Model)
+        {
+            <div class="row">
+                <div class="col">
+                    <div class="icon-box">
+                        <h4>@item.Title</h4>
+                        <p>@item.Body</p>
+
+                    </div>
+                </div>
+             </div>
+    }
+    </div>
+</div>
+</section>

@@ -17,7 +17,7 @@ namespace SpeechTherapyCenter.Controllers
             serviceWork = service;
         }
 
-        // Shows all posts
+        // Shows all workers
         public async Task<IActionResult> Index()
         {
             return View(await serviceWork.GetAll());

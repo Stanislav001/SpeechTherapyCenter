@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Date.Migrations
 {
     [DbContext(typeof(SpeechCenterDbContext))]
-    [Migration("20210723131313_Initial")]
+    [Migration("20210725101916_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -65,14 +65,14 @@ namespace Date.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "713dd182-e158-42b7-8646-0ec72a9ba9e4",
-                            ConcurrencyStamp = "4ae14d6c-c0bc-4d9e-a9ca-3b46aa7d207b",
+                            Id = "bcad4068-6f63-4cad-ab5b-18ce30e3747b",
+                            ConcurrencyStamp = "29b5d059-eba8-4d2a-86ad-2d1175b2b62e",
                             Name = "Admin"
                         },
                         new
                         {
-                            Id = "6314e14d-07fc-484b-86bf-4fbfcac7501e",
-                            ConcurrencyStamp = "5d89ffdc-1013-4d86-a034-c20a63f6c028",
+                            Id = "88245c52-b8f7-4ad2-99e6-9fcba5a20b3b",
+                            ConcurrencyStamp = "bd69c89d-9141-4e13-a7e2-3be07f2b925f",
                             Name = "User"
                         });
                 });
@@ -209,8 +209,8 @@ namespace Date.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5f95da92-7c54-4eae-a2ec-f1bc8541b724",
-                            CreatedAt = new DateTime(2021, 7, 23, 16, 13, 12, 728, DateTimeKind.Local).AddTicks(6741),
+                            Id = "886ad08d-80eb-4bf1-a30a-bc338d6eead8",
+                            CreatedAt = new DateTime(2021, 7, 25, 13, 19, 15, 957, DateTimeKind.Local).AddTicks(2217),
                             FirstName = "Невяна",
                             LastName = "Славова"
                         });
@@ -262,9 +262,9 @@ namespace Date.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "0c44c5c3-bd20-4b4f-9efb-633b1ce354d8",
+                            Id = "8b5a0431-80d5-4cee-b8bb-a5c2fd604876",
                             Body = "Надяваме се да споделяте мненията си за сайта ни!",
-                            Created = new DateTime(2021, 7, 23, 16, 13, 12, 728, DateTimeKind.Local).AddTicks(8102),
+                            Created = new DateTime(2021, 7, 25, 13, 19, 15, 957, DateTimeKind.Local).AddTicks(3397),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Добре дошли!"
                         });
@@ -273,7 +273,6 @@ namespace Date.Migrations
             modelBuilder.Entity("Models.Service", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Body")
@@ -282,13 +281,16 @@ namespace Date.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("FinishDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime?>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
@@ -302,6 +304,44 @@ namespace Date.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Services");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "723c23f5-09cb-4db9-b494-f73f91e2d59b",
+                            Body = "Спечифична и индивидуална терапия, целяща преодоляването на различните говорни и езикови проблеми.",
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FinishDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Логопедична терапия"
+                        },
+                        new
+                        {
+                            Id = "a6173e5d-161f-4289-a23d-a329b6f636ba",
+                            Body = "Целите са съобразени с групата. Извършват се различен вид занимания - игрови, ролеви, творчески с цел адаптация, социални и личностни умения.",
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FinishDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Групова терапия"
+                        },
+                        new
+                        {
+                            Id = "32742ba5-827e-4cc1-ab41-2b787a8184c5",
+                            Body = "Целите са да поставят ясни граници и правила, да развива паметта, да помага за преодоляване на емоционални трудности и други подобни проблеми.",
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FinishDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Психотерапия за деца"
+                        },
+                        new
+                        {
+                            Id = "6da4ccbb-2d5d-4dd5-9af2-9bfb60d62b3b",
+                            Body = "В нашия логопедичен център предлагаме изследване на говорния и комуникативния статус на детето и определяме нарушението и прецизно създаваме план за коригиране.",
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FinishDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Диагностициране"
+                        });
                 });
 
             modelBuilder.Entity("Models.User", b =>
@@ -427,9 +467,9 @@ namespace Date.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "29a7a16f-7fd3-43e5-aa65-be71e02535a3",
+                            Id = "a8bb8662-7f91-48ac-bfe9-a4416793ffdf",
                             Country = "България",
-                            CreatedAt = new DateTime(2021, 7, 23, 16, 13, 12, 726, DateTimeKind.Local).AddTicks(3362),
+                            CreatedAt = new DateTime(2021, 7, 25, 13, 19, 15, 955, DateTimeKind.Local).AddTicks(2956),
                             FirstName = "Ивана",
                             Internship = 8,
                             LastName = "Петрова",
@@ -439,9 +479,9 @@ namespace Date.Migrations
                         },
                         new
                         {
-                            Id = "a1cf1105-1256-4494-99d0-d4d58a1d5156",
+                            Id = "08396fc8-8fdf-48e8-879e-81cb31db7bd2",
                             Country = "България",
-                            CreatedAt = new DateTime(2021, 7, 23, 16, 13, 12, 728, DateTimeKind.Local).AddTicks(6318),
+                            CreatedAt = new DateTime(2021, 7, 25, 13, 19, 15, 957, DateTimeKind.Local).AddTicks(1872),
                             FirstName = "Миглена",
                             Internship = 6,
                             LastName = "Ангелова",
@@ -451,9 +491,9 @@ namespace Date.Migrations
                         },
                         new
                         {
-                            Id = "866f85fd-ee5f-4ae0-b6fe-1449e17a8aa1",
+                            Id = "50f7a326-27fe-4068-a8e1-4c7d25237d62",
                             Country = "България",
-                            CreatedAt = new DateTime(2021, 7, 23, 16, 13, 12, 728, DateTimeKind.Local).AddTicks(6351),
+                            CreatedAt = new DateTime(2021, 7, 25, 13, 19, 15, 957, DateTimeKind.Local).AddTicks(1902),
                             FirstName = "Яница",
                             Internship = 5,
                             LastName = "Георгиева",
@@ -461,6 +501,21 @@ namespace Date.Migrations
                             Salary = 1000,
                             Year = 25
                         });
+                });
+
+            modelBuilder.Entity("ServiceWorker", b =>
+                {
+                    b.Property<string>("ServicesId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("WorkersId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("ServicesId", "WorkersId");
+
+                    b.HasIndex("WorkersId");
+
+                    b.ToTable("ServiceWorker");
                 });
 
             modelBuilder.Entity("ManagerWorker", b =>
@@ -555,6 +610,21 @@ namespace Date.Migrations
                     b.HasOne("Models.User", null)
                         .WithMany("Services")
                         .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("ServiceWorker", b =>
+                {
+                    b.HasOne("Models.Service", null)
+                        .WithMany()
+                        .HasForeignKey("ServicesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Models.Worker", null)
+                        .WithMany()
+                        .HasForeignKey("WorkersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Models.Manager", b =>

@@ -9,8 +9,11 @@ namespace Models
 {
     public class Service : Base
     {
+        public string Id { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime FinishDate { get; set; }
+        public ICollection<Worker> Workers { get; set; }
     }
 }
