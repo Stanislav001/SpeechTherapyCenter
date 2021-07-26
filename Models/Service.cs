@@ -15,5 +15,6 @@ namespace Models
         public DateTime StartDate { get; set; }
         public DateTime FinishDate { get; set; }
         public ICollection<Worker> Workers { get; set; }
+        public ICollection<Reservation> Reservations { get; set; }
     }
 }

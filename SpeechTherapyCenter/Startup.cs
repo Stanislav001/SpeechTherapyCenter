@@ -36,6 +36,7 @@ namespace SpeechTherapyCenter
             services.AddTransient<PostService>();
             services.AddTransient<WorkerService>();
             services.AddTransient<OfficeService>();
+            services.AddTransient<ReservationService>();
 
             services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false).AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<SpeechCenterDbContext>().AddDefaultTokenProviders(); ;

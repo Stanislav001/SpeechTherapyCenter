@@ -15,6 +15,7 @@ namespace Date
         public DbSet<Post> Posts { get; set; }
         public DbSet<Worker> Workers { get; set; }
         public DbSet<Service> Services { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

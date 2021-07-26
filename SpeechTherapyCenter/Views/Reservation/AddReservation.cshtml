@@ -1,0 +1,187 @@
+﻿@model ReservationViewModel
+
+<style>
+*, body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+html, body {
+    background-color: #152733;
+}
+
+
+.form-holder {
+    margin:auto;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+}
+
+.form-holder .form-content {
+    position: relative;
+    text-align: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 60px;
+}
+
+.form-content .form-items {
+    border: 3px solid #fff;
+    padding: 40px;
+    display: inline-block;
+    width: 100%;
+    min-width: 540px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-align: left;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.form-content h3 {
+    color: #fff;
+    text-align: left;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.form-content h3.form-title {
+    margin-bottom: 30px;
+}
+
+.form-content p {
+    color: #fff;
+    text-align: left;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 20px;
+    margin-bottom: 30px;
+}
+
+
+.form-content label, .was-validated .form-check-input:invalid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label{
+    color: #fff;
+}
+
+.form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content select {
+    width: 100%;
+    padding: 9px 20px;
+    text-align: left;
+    border: 0;
+    outline: 0;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    color: #8D8D8D;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    margin-top: 16px;
+}
+
+
+.btn-primary{
+    background-color: #6C757D;
+    outline: none;
+    border: 0px;
+     box-shadow: none;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active{
+    background-color: #495056;
+    outline: none !important;
+    border: none !important;
+     box-shadow: none;
+}
+
+.form-content textarea {
+    position: static !important;
+    width: 100%;
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-align: left;
+    background-color: #fff;
+    border: 0;
+    font-size: 15px;
+    font-weight: 300;
+    color: #8D8D8D;
+    outline: none;
+    resize: none;
+    height: 120px;
+    -webkit-transition: none;
+    transition: none;
+    margin-bottom: 14px;
+}
+
+.form-content textarea:hover, .form-content textarea:focus {
+    border: 0;
+    background-color: #ebeff8;
+    color: #8D8D8D;
+}
+
+.mv-up{
+    margin-top: -9px !important;
+    margin-bottom: 8px !important;
+}
+
+.invalid-feedback{
+    color: #ff606e;
+}
+
+.valid-feedback{
+   color: #2acc80;
+}
+</style>
+
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Запазете час при нас</h3>
+                    <p>Попълнете полетата внимателно.</p>
+                    <form method="post" asp-action="AddReservation">
+
+                        <div class="col-md-12">
+                            <label asp-for="FirstName">Име:</label>
+                            <input asp-for="FirstName" class="form-control" />
+                            <label asp-for="LastName">Фамилия:</label>
+                            <input asp-for="LastName" class="form-control" />
+                            <label asp-for="Number">Телефонен номер:</label>
+                            <input asp-for="Number" class="form-control" />
+                            <label asp-for="Email">Email:</label>
+                            <input asp-for="Email" class="form-control" />
+                            <label asp-for="ServiceName">Име на услугата:</label>
+                            <input asp-for="ServiceName" class="form-control" />
+                            <label asp-for="Date">Дата:</label>
+                            <input asp-for="Date" class="form-control" />
+                            <label asp-for="Time">Час:</label>
+                            <input asp-for="Time" class="form-control" />
+                        </div>
+
+                        <div class="col-md-12">
+                            <label asp-for="KidName">Име на детето:</label>
+                            <input asp-for="KidName" class="form-control" />
+                            <label asp-for="KidYear">Години на детето:</label>
+                            <input asp-for="KidYear" class="form-control" />
+                            <label asp-for="City">Град:</label>
+                            <input asp-for="City" class="form-control" />
+                            <label asp-for="Gender">Пол на детето:</label>
+                            <input asp-for="Gender" class="form-control" />
+                        </div>
+
+                        <div class="form-button mt-3">
+                            <input type="submit" class="btn btn-info w-75" value="Добавете" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

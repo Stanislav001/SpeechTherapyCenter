@@ -63,14 +63,14 @@ namespace Date.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "bcad4068-6f63-4cad-ab5b-18ce30e3747b",
-                            ConcurrencyStamp = "29b5d059-eba8-4d2a-86ad-2d1175b2b62e",
+                            Id = "094109e7-bd5a-4b17-a166-591a3ccc4694",
+                            ConcurrencyStamp = "42e7faf4-336d-461a-9a77-ea3e7a32f551",
                             Name = "Admin"
                         },
                         new
                         {
-                            Id = "88245c52-b8f7-4ad2-99e6-9fcba5a20b3b",
-                            ConcurrencyStamp = "bd69c89d-9141-4e13-a7e2-3be07f2b925f",
+                            Id = "293ffeaf-9bf3-433e-b5c3-60a52e25246d",
+                            ConcurrencyStamp = "1237f4b6-6bcd-4de0-9141-31968b2822ba",
                             Name = "User"
                         });
                 });
@@ -207,8 +207,8 @@ namespace Date.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "886ad08d-80eb-4bf1-a30a-bc338d6eead8",
-                            CreatedAt = new DateTime(2021, 7, 25, 13, 19, 15, 957, DateTimeKind.Local).AddTicks(2217),
+                            Id = "c5c4994b-618c-40b3-a671-ce53594884cf",
+                            CreatedAt = new DateTime(2021, 7, 26, 17, 6, 51, 24, DateTimeKind.Local).AddTicks(4027),
                             FirstName = "Невяна",
                             LastName = "Славова"
                         });
@@ -260,12 +260,65 @@ namespace Date.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8b5a0431-80d5-4cee-b8bb-a5c2fd604876",
+                            Id = "50e9d523-cf64-4b63-8d0e-b4f1081cb2db",
                             Body = "Надяваме се да споделяте мненията си за сайта ни!",
-                            Created = new DateTime(2021, 7, 25, 13, 19, 15, 957, DateTimeKind.Local).AddTicks(3397),
+                            Created = new DateTime(2021, 7, 26, 17, 6, 51, 24, DateTimeKind.Local).AddTicks(5098),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Добре дошли!"
                         });
+                });
+
+            modelBuilder.Entity("Models.Reservation", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Date")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gender")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("KidName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("KidYear")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Number")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ServiceName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Time")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reservations");
                 });
 
             modelBuilder.Entity("Models.Service", b =>
@@ -306,7 +359,7 @@ namespace Date.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "723c23f5-09cb-4db9-b494-f73f91e2d59b",
+                            Id = "ea4d4b5a-c155-4d10-aaa9-b908cfeb4e94",
                             Body = "Спечифична и индивидуална терапия, целяща преодоляването на различните говорни и езикови проблеми.",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FinishDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -315,7 +368,7 @@ namespace Date.Migrations
                         },
                         new
                         {
-                            Id = "a6173e5d-161f-4289-a23d-a329b6f636ba",
+                            Id = "fd7208d5-2633-4fc5-aeda-6c737c007fcd",
                             Body = "Целите са съобразени с групата. Извършват се различен вид занимания - игрови, ролеви, творчески с цел адаптация, социални и личностни умения.",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FinishDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -324,7 +377,7 @@ namespace Date.Migrations
                         },
                         new
                         {
-                            Id = "32742ba5-827e-4cc1-ab41-2b787a8184c5",
+                            Id = "44e81bc9-f108-40ed-92a2-5fd13ed1e632",
                             Body = "Целите са да поставят ясни граници и правила, да развива паметта, да помага за преодоляване на емоционални трудности и други подобни проблеми.",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FinishDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -333,7 +386,7 @@ namespace Date.Migrations
                         },
                         new
                         {
-                            Id = "6da4ccbb-2d5d-4dd5-9af2-9bfb60d62b3b",
+                            Id = "11ae3819-b251-4006-b461-9142fe5b61a7",
                             Body = "В нашия логопедичен център предлагаме изследване на говорния и комуникативния статус на детето и определяме нарушението и прецизно създаваме план за коригиране.",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FinishDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -465,9 +518,9 @@ namespace Date.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a8bb8662-7f91-48ac-bfe9-a4416793ffdf",
+                            Id = "175dbca2-0576-49d0-96e3-983f66b67feb",
                             Country = "България",
-                            CreatedAt = new DateTime(2021, 7, 25, 13, 19, 15, 955, DateTimeKind.Local).AddTicks(2956),
+                            CreatedAt = new DateTime(2021, 7, 26, 17, 6, 51, 22, DateTimeKind.Local).AddTicks(3802),
                             FirstName = "Ивана",
                             Internship = 8,
                             LastName = "Петрова",
@@ -477,9 +530,9 @@ namespace Date.Migrations
                         },
                         new
                         {
-                            Id = "08396fc8-8fdf-48e8-879e-81cb31db7bd2",
+                            Id = "52ec0bcd-bf4a-41c0-b909-97d962cf73da",
                             Country = "България",
-                            CreatedAt = new DateTime(2021, 7, 25, 13, 19, 15, 957, DateTimeKind.Local).AddTicks(1872),
+                            CreatedAt = new DateTime(2021, 7, 26, 17, 6, 51, 24, DateTimeKind.Local).AddTicks(3679),
                             FirstName = "Миглена",
                             Internship = 6,
                             LastName = "Ангелова",
@@ -489,9 +542,9 @@ namespace Date.Migrations
                         },
                         new
                         {
-                            Id = "50f7a326-27fe-4068-a8e1-4c7d25237d62",
+                            Id = "c4e9749d-0685-4850-9bbb-c36726ba67b0",
                             Country = "България",
-                            CreatedAt = new DateTime(2021, 7, 25, 13, 19, 15, 957, DateTimeKind.Local).AddTicks(1902),
+                            CreatedAt = new DateTime(2021, 7, 26, 17, 6, 51, 24, DateTimeKind.Local).AddTicks(3708),
                             FirstName = "Яница",
                             Internship = 5,
                             LastName = "Георгиева",
@@ -499,6 +552,21 @@ namespace Date.Migrations
                             Salary = 1000,
                             Year = 25
                         });
+                });
+
+            modelBuilder.Entity("ReservationService", b =>
+                {
+                    b.Property<string>("ReservationsId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ServicesId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("ReservationsId", "ServicesId");
+
+                    b.HasIndex("ServicesId");
+
+                    b.ToTable("ReservationService");
                 });
 
             modelBuilder.Entity("ServiceWorker", b =>
@@ -608,6 +676,21 @@ namespace Date.Migrations
                     b.HasOne("Models.User", null)
                         .WithMany("Services")
                         .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("ReservationService", b =>
+                {
+                    b.HasOne("Models.Reservation", null)
+                        .WithMany()
+                        .HasForeignKey("ReservationsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Models.Service", null)
+                        .WithMany()
+                        .HasForeignKey("ServicesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ServiceWorker", b =>
