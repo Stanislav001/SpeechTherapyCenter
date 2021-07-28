@@ -1,8 +1,102 @@
 ﻿@{
     ViewData["Title"] = "Начална страница";
 }
+
+<style>
+    section {
+        padding-top: 1px;
+    }
+
+        section h1 {
+            text-transform: uppercase;
+            font-weight: 900;
+            color: #683aa4;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+
+    #hero .col {
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
+    }
+
+    #hero .img-col {
+        justify-content: flex-end;
+    }
+
+    #hero img {
+        max-width: 130% !important;
+        width: 130%;
+    }
+
+    #hero .card {
+        box-shadow: 11px 7px 16px #f9f9f9;
+        border: 0;
+        text-align: center;
+    }
+
+    #hero .icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 20px;
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
 <body>
-    <div class="text-center">
-        <h1 class="display-4">Добре дошли в логопедичен център "Слънце" </h1>
-    </div>
+
+    <!-- Hero section -->
+    <section id="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Логопедичен<br>център"Слънце"</h1>
+                    <p>Предлагаме иновативни методи, с които успяваме да преодолеем проблема заедно!</p>
+                </div>
+                <div>
+                    <img src="~/Images/Favicon.png" class="img-fluid" alt="">
+                </div>
+            </div>
+            <div class="row cards">
+
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Всеотдаен екип</h5>
+                            <p class="card-text">При нас работят хора, които са готови да Ви помогнат винаги, само трябва да им се доверите.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Успехи</h5>
+                            <p class="card-text">Имаме изключително много доволни клиенти, така че не се колебайте дали да ни се доверите.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Успехи</h5>
+                            <p class="card-text">Винаги сме коректни към нашите клиенти!</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Hero section -->
 </body>
+</html>

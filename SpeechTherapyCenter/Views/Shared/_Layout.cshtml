@@ -1,4 +1,23 @@
-﻿<!DOCTYPE html>
+﻿<style>
+    .logo h1 span {
+        font-size: 25px;
+        margin: 0;
+        padding: 4px 0;
+        line-height: 1;
+        font-weight: 300;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #683aa4;
+        font: italic small-caps bold 16px/2 cursive;
+    }
+
+    .first {
+        margin-left: 3%;
+    }
+
+</style>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -12,11 +31,13 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     <img src="~/Images/Favicon.png" height="30" />
-                </a>
+                    <div class="logo">
+                        <h1 class="text-light"><span>Слънце</span></h1>
+                    </div>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
+                        <li class="first"></li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Начало</a>
                         </li>
@@ -36,7 +57,6 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Manager" asp-action="Index">Workers</a>
                         </li>
-
                     </ul>
                 </div>
             </div>
@@ -49,11 +69,6 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - SpeechTherapyCenter - <a asp-area="" asp-controller="Home" asp-action="Privacy">Поверителност</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
