@@ -29,7 +29,8 @@ namespace Services
                 Internship = x.Internship,
                 Position = x.Position,
                 Salary = x.Salary,
-                Year = x.Year
+                Year = x.Year,
+                Info = x.Info
             }).ToListAsync();
         }
 
@@ -51,7 +52,8 @@ namespace Services
                     Internship = x.Internship,
                     Position = x.Position,
                     Salary = x.Salary,
-                    Year = x.Year
+                    Year = x.Year,
+                    Info = x.Info
                 }).FirstOrDefaultAsync();
                 return workerDb;
             }

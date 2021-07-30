@@ -104,6 +104,7 @@ namespace Date.Migrations
                     Salary = table.Column<int>(type: "int", nullable: false),
                     Internship = table.Column<int>(type: "int", nullable: false),
                     Position = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Info = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
@@ -359,39 +360,39 @@ namespace Date.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "094109e7-bd5a-4b17-a166-591a3ccc4694", "42e7faf4-336d-461a-9a77-ea3e7a32f551", "Admin", null },
-                    { "293ffeaf-9bf3-433e-b5c3-60a52e25246d", "1237f4b6-6bcd-4de0-9141-31968b2822ba", "User", null }
+                    { "fc69c208-a276-435b-9730-60642f46f436", "5fe202c2-1865-42fa-b0b4-db5acfd9ee81", "Admin", null },
+                    { "7da330cc-e321-4e07-8d35-eee7457a56d3", "4d52a7c2-1221-4e9c-b254-36f0226249ff", "User", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Managers",
                 columns: new[] { "Id", "CreatedAt", "DeletedAt", "FirstName", "LastName", "ModifiedAt" },
-                values: new object[] { "c5c4994b-618c-40b3-a671-ce53594884cf", new DateTime(2021, 7, 26, 17, 6, 51, 24, DateTimeKind.Local).AddTicks(4027), null, "Невяна", "Славова", null });
+                values: new object[] { "4d69ef58-5ebd-41dc-a2df-23bd814009dd", new DateTime(2021, 7, 30, 15, 45, 44, 829, DateTimeKind.Local).AddTicks(6870), null, "Невяна", "Славова", null });
 
             migrationBuilder.InsertData(
                 table: "Posts",
                 columns: new[] { "Id", "Body", "Created", "CreatedAt", "DeletedAt", "ManagerId", "ModifiedAt", "Title", "UserId", "WorkerId" },
-                values: new object[] { "50e9d523-cf64-4b63-8d0e-b4f1081cb2db", "Надяваме се да споделяте мненията си за сайта ни!", new DateTime(2021, 7, 26, 17, 6, 51, 24, DateTimeKind.Local).AddTicks(5098), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, null, "Добре дошли!", null, null });
+                values: new object[] { "65769221-f89b-43ce-a3e7-e1d43e74284e", "Надяваме се да споделяте мненията си за сайта ни!", new DateTime(2021, 7, 30, 15, 45, 44, 829, DateTimeKind.Local).AddTicks(7905), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, null, "Добре дошли!", null, null });
 
             migrationBuilder.InsertData(
                 table: "Services",
                 columns: new[] { "Id", "Body", "CreatedAt", "DeletedAt", "FinishDate", "ModifiedAt", "StartDate", "Title", "UserId" },
                 values: new object[,]
                 {
-                    { "ea4d4b5a-c155-4d10-aaa9-b908cfeb4e94", "Спечифична и индивидуална терапия, целяща преодоляването на различните говорни и езикови проблеми.", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Логопедична терапия", null },
-                    { "fd7208d5-2633-4fc5-aeda-6c737c007fcd", "Целите са съобразени с групата. Извършват се различен вид занимания - игрови, ролеви, творчески с цел адаптация, социални и личностни умения.", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Групова терапия", null },
-                    { "44e81bc9-f108-40ed-92a2-5fd13ed1e632", "Целите са да поставят ясни граници и правила, да развива паметта, да помага за преодоляване на емоционални трудности и други подобни проблеми.", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Психотерапия за деца", null },
-                    { "11ae3819-b251-4006-b461-9142fe5b61a7", "В нашия логопедичен център предлагаме изследване на говорния и комуникативния статус на детето и определяме нарушението и прецизно създаваме план за коригиране.", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Диагностициране", null }
+                    { "c1084722-fee9-4b45-8d76-bcebfd5b1305", "Спечифична и индивидуална терапия, целяща преодоляването на различните говорни и езикови проблеми.", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Логопедична терапия", null },
+                    { "38919fd2-bc73-4910-bdf3-0c29fc1205e6", "Целите са съобразени с групата. Извършват се различен вид занимания - игрови, ролеви, творчески с цел адаптация, социални и личностни умения.", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Групова терапия", null },
+                    { "0ce0b1e6-988e-4477-91ec-93dc5958c062", "Целите са да поставят ясни граници и правила, да развива паметта, да помага за преодоляване на емоционални трудности и други подобни проблеми.", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Психотерапия за деца", null },
+                    { "eb1d68ec-c1c5-4fbd-893c-bf56ac5a3ce9", "В нашия логопедичен център предлагаме изследване на говорния и комуникативния статус на детето и определяме нарушението и прецизно създаваме план за коригиране.", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Диагностициране", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Workers",
-                columns: new[] { "Id", "Country", "CreatedAt", "DeletedAt", "FirstName", "Internship", "LastName", "ModifiedAt", "Position", "Salary", "Year" },
+                columns: new[] { "Id", "Country", "CreatedAt", "DeletedAt", "FirstName", "Info", "Internship", "LastName", "ModifiedAt", "Position", "Salary", "Year" },
                 values: new object[,]
                 {
-                    { "175dbca2-0576-49d0-96e3-983f66b67feb", "България", new DateTime(2021, 7, 26, 17, 6, 51, 22, DateTimeKind.Local).AddTicks(3802), null, "Ивана", 8, "Петрова", null, "Специален психолог", 2000, 35 },
-                    { "52ec0bcd-bf4a-41c0-b909-97d962cf73da", "България", new DateTime(2021, 7, 26, 17, 6, 51, 24, DateTimeKind.Local).AddTicks(3679), null, "Миглена", 6, "Ангелова", null, "Логопед", 950, 30 },
-                    { "c4e9749d-0685-4850-9bbb-c36726ba67b0", "България", new DateTime(2021, 7, 26, 17, 6, 51, 24, DateTimeKind.Local).AddTicks(3708), null, "Яница", 5, "Георгиева", null, "Рехабилитатор и психолог", 1000, 25 }
+                    { "1576865c-968f-4e37-ab5c-66041bce97c5", "България", new DateTime(2021, 7, 30, 15, 45, 44, 827, DateTimeKind.Local).AddTicks(7088), null, "Ивана", "Изключителен специалист, който е помогнал на много деца и възрастни. Ивана е на 35 години и е готова да Ви подаде ръка във всеки един момент.", 8, "Петрова", null, "Специален психолог", 2000, 35 },
+                    { "ecff5945-7019-4d87-9593-7fec03fa76a5", "България", new DateTime(2021, 7, 30, 15, 45, 44, 829, DateTimeKind.Local).AddTicks(6532), null, "Миглена", "Единот най-добрите ни служители, никога не е изпитвала проблем да помогне на някого. Всеотдайна на работата си!", 6, "Ангелова", null, "Логопед", 950, 30 },
+                    { "5f80f9a4-94c3-4d42-a43d-07f5af27c2c0", "България", new DateTime(2021, 7, 30, 15, 45, 44, 829, DateTimeKind.Local).AddTicks(6559), null, "Яница", "Яница е най-младата служителка при нас, но въпреки това показва изключително добри познания в областта си! Няма да сбъркате ако и се доверите!", 5, "Георгиева", null, "Рехабилитатор и психолог", 1000, 25 }
                 });
 
             migrationBuilder.CreateIndex(

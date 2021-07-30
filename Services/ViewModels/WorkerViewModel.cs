@@ -22,5 +22,6 @@ namespace Services.ViewModels
         public int Internship { get; set; }
         [Display(Name = "Длъжност: ")]
         public string Position { get; set; }
+        public string Info { get; set; }
     }
 }

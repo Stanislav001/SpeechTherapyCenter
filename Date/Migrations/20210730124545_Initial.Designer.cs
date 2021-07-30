@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Date.Migrations
 {
     [DbContext(typeof(SpeechCenterDbContext))]
-    [Migration("20210726140651_Initial")]
+    [Migration("20210730124545_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -65,14 +65,14 @@ namespace Date.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "094109e7-bd5a-4b17-a166-591a3ccc4694",
-                            ConcurrencyStamp = "42e7faf4-336d-461a-9a77-ea3e7a32f551",
+                            Id = "fc69c208-a276-435b-9730-60642f46f436",
+                            ConcurrencyStamp = "5fe202c2-1865-42fa-b0b4-db5acfd9ee81",
                             Name = "Admin"
                         },
                         new
                         {
-                            Id = "293ffeaf-9bf3-433e-b5c3-60a52e25246d",
-                            ConcurrencyStamp = "1237f4b6-6bcd-4de0-9141-31968b2822ba",
+                            Id = "7da330cc-e321-4e07-8d35-eee7457a56d3",
+                            ConcurrencyStamp = "4d52a7c2-1221-4e9c-b254-36f0226249ff",
                             Name = "User"
                         });
                 });
@@ -209,8 +209,8 @@ namespace Date.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c5c4994b-618c-40b3-a671-ce53594884cf",
-                            CreatedAt = new DateTime(2021, 7, 26, 17, 6, 51, 24, DateTimeKind.Local).AddTicks(4027),
+                            Id = "4d69ef58-5ebd-41dc-a2df-23bd814009dd",
+                            CreatedAt = new DateTime(2021, 7, 30, 15, 45, 44, 829, DateTimeKind.Local).AddTicks(6870),
                             FirstName = "Невяна",
                             LastName = "Славова"
                         });
@@ -262,9 +262,9 @@ namespace Date.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "50e9d523-cf64-4b63-8d0e-b4f1081cb2db",
+                            Id = "65769221-f89b-43ce-a3e7-e1d43e74284e",
                             Body = "Надяваме се да споделяте мненията си за сайта ни!",
-                            Created = new DateTime(2021, 7, 26, 17, 6, 51, 24, DateTimeKind.Local).AddTicks(5098),
+                            Created = new DateTime(2021, 7, 30, 15, 45, 44, 829, DateTimeKind.Local).AddTicks(7905),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Добре дошли!"
                         });
@@ -361,7 +361,7 @@ namespace Date.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ea4d4b5a-c155-4d10-aaa9-b908cfeb4e94",
+                            Id = "c1084722-fee9-4b45-8d76-bcebfd5b1305",
                             Body = "Спечифична и индивидуална терапия, целяща преодоляването на различните говорни и езикови проблеми.",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FinishDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -370,7 +370,7 @@ namespace Date.Migrations
                         },
                         new
                         {
-                            Id = "fd7208d5-2633-4fc5-aeda-6c737c007fcd",
+                            Id = "38919fd2-bc73-4910-bdf3-0c29fc1205e6",
                             Body = "Целите са съобразени с групата. Извършват се различен вид занимания - игрови, ролеви, творчески с цел адаптация, социални и личностни умения.",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FinishDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -379,7 +379,7 @@ namespace Date.Migrations
                         },
                         new
                         {
-                            Id = "44e81bc9-f108-40ed-92a2-5fd13ed1e632",
+                            Id = "0ce0b1e6-988e-4477-91ec-93dc5958c062",
                             Body = "Целите са да поставят ясни граници и правила, да развива паметта, да помага за преодоляване на емоционални трудности и други подобни проблеми.",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FinishDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -388,7 +388,7 @@ namespace Date.Migrations
                         },
                         new
                         {
-                            Id = "11ae3819-b251-4006-b461-9142fe5b61a7",
+                            Id = "eb1d68ec-c1c5-4fbd-893c-bf56ac5a3ce9",
                             Body = "В нашия логопедичен център предлагаме изследване на говорния и комуникативния статус на детето и определяме нарушението и прецизно създаваме план за коригиране.",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FinishDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -495,6 +495,9 @@ namespace Date.Migrations
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Info")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Internship")
                         .HasColumnType("int");
 
@@ -520,10 +523,11 @@ namespace Date.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "175dbca2-0576-49d0-96e3-983f66b67feb",
+                            Id = "1576865c-968f-4e37-ab5c-66041bce97c5",
                             Country = "България",
-                            CreatedAt = new DateTime(2021, 7, 26, 17, 6, 51, 22, DateTimeKind.Local).AddTicks(3802),
+                            CreatedAt = new DateTime(2021, 7, 30, 15, 45, 44, 827, DateTimeKind.Local).AddTicks(7088),
                             FirstName = "Ивана",
+                            Info = "Изключителен специалист, който е помогнал на много деца и възрастни. Ивана е на 35 години и е готова да Ви подаде ръка във всеки един момент.",
                             Internship = 8,
                             LastName = "Петрова",
                             Position = "Специален психолог",
@@ -532,10 +536,11 @@ namespace Date.Migrations
                         },
                         new
                         {
-                            Id = "52ec0bcd-bf4a-41c0-b909-97d962cf73da",
+                            Id = "ecff5945-7019-4d87-9593-7fec03fa76a5",
                             Country = "България",
-                            CreatedAt = new DateTime(2021, 7, 26, 17, 6, 51, 24, DateTimeKind.Local).AddTicks(3679),
+                            CreatedAt = new DateTime(2021, 7, 30, 15, 45, 44, 829, DateTimeKind.Local).AddTicks(6532),
                             FirstName = "Миглена",
+                            Info = "Единот най-добрите ни служители, никога не е изпитвала проблем да помогне на някого. Всеотдайна на работата си!",
                             Internship = 6,
                             LastName = "Ангелова",
                             Position = "Логопед",
@@ -544,10 +549,11 @@ namespace Date.Migrations
                         },
                         new
                         {
-                            Id = "c4e9749d-0685-4850-9bbb-c36726ba67b0",
+                            Id = "5f80f9a4-94c3-4d42-a43d-07f5af27c2c0",
                             Country = "България",
-                            CreatedAt = new DateTime(2021, 7, 26, 17, 6, 51, 24, DateTimeKind.Local).AddTicks(3708),
+                            CreatedAt = new DateTime(2021, 7, 30, 15, 45, 44, 829, DateTimeKind.Local).AddTicks(6559),
                             FirstName = "Яница",
+                            Info = "Яница е най-младата служителка при нас, но въпреки това показва изключително добри познания в областта си! Няма да сбъркате ако и се доверите!",
                             Internship = 5,
                             LastName = "Георгиева",
                             Position = "Рехабилитатор и психолог",

@@ -30,7 +30,8 @@ namespace Services
                 Year = x.Year,
                 Internship = x.Internship,
                 Position = x.Position,
-                Salary = x.Salary
+                Salary = x.Salary,
+                Info = x.Info
             }).ToListAsync();
         }
 
@@ -45,6 +46,7 @@ namespace Services
             workerDb.Position = worker.Position;
             workerDb.Salary = worker.Salary;
             workerDb.Year = worker.Year;
+            workerDb.Info = worker.Info;
 
             if (worker.FirstName != null)
             {

@@ -1,38 +1,96 @@
 ﻿@model List<WorkerViewModel>
-<style>
-    .headding-title {
-        background: #FA566E;
-        color: #fff;
-    }
-</style>
 
-<div class="col-md-12 headding-title">
-    <h1 class="text-center">Нашите служители</h1>
-</div>
-<table id="context" class="table table-bordered table-striped" style="width:100%">
-    <thead>
-        <tr>
-            <th>
-                Име
-            </th>
-            <th>
-                Фамилия
-            </th>
-            <th>
-                Държава
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-<tr>
-    <td width="20%">@item.FirstName</td>
-    <td width="20%">@item.LastName</td>
-    <td width="20%">@item.Country</td>
-    <td>
-        <a asp-controller="Worker" asp-action="GetWorkerById" asp-route-id="@item.WorkerId" class="btn btn-primary mx-1">Вижте</a>
-    </td>
-</tr>}
-    </tbody>
-</table>
+    <style>
+        body {
+            background: #F5F5F5;
+        }
+
+        .team-list img {
+            width: 40%;
+        }
+
+        .team-list .content {
+            width: 60%;
+        }
+
+        .team, .team-list {
+            -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
+        }
+
+        .shadow {
+            -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15) !important;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        .team-list .content .follow {
+            position: absolute;
+            margin-bottom:5px;
+        }
+
+        .list-inline-item:not(:last-child) {
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+
+        .social-icon.social li a {
+            color: #adb5bd;
+            border-color: #adb5bd;
+        }
+
+        .social-icon li a {
+            color: #35404e;
+            border: 1px solid #35404e;
+            display: inline-block;
+            height: 32px;
+            text-align: center;
+            font-size: 15px;
+            width: 32px;
+            line-height: 30px;
+            -webkit-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+      
+        .text-muted {
+            color: #8492a6 !important;
+        }
+
+    </style>
+
+    <body>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css" integrity="sha256-nwNjrH7J9zS/Ti4twtWX7OsC5QdQHCIKTv5cLMsGo68=" crossorigin="anonymous" />
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="section-title mb-4 pb-2">
+                        <h4 class="title mb-4">Нашите служители</h4>
+                        <p class="text-muted para-desc mx-auto mb-0">Всеки един е готов да Ви помогне, само трябва да ни се доверите.</p>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+            @foreach (var item in Model)
+            {
+    <div class="row">
+        <div class="col-md-6 col-12 mt-6 pt-2">
+            <div class="team-list position-relative overflow-hidden shadow rounded">
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="img-fluid float-left" alt="">
+                <div class="content float-right p-4">
+                    <h5 class="title mb-0">@item.FirstName @item.LastName</h5>
+                    <small class="text-muted">Позиция: @item.Position</small>
+                    <p class="text-muted mt-3">Стаж: @item.Internship </p>
+                    <p class="text-muted mt-3">@item.Info</p>
+                    <ul class="list-unstyled follow social-icon social mb-0">
+                        <li class="list-inline-item"><a href="" class="rounded"><i class="mdi mdi-facebook" title="Facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="" class="rounded"><i class="mdi mdi-instagram" title="Instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="" class="rounded"><i class="mdi mdi-twitter" title="Twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="" class="rounded"><i class="mdi mdi-google-plus" title="Google +"></i></a></li>
+                    </ul><!--end icon-->
+                </div>
+            </div>
+        </div><!--end col-->
+    </div>}
+        </div>
+    </body>
